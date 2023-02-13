@@ -14,16 +14,16 @@ class ProjectController extends Controller
     // all projects
     public function index()
     {
-        $projects = Project::all()->toArray();
+        $projects = Project::with(['user', 'status'])->get();
         
-        return array_reverse($projects);
+        return $projects;
     }
     
     // add project
     public function add(StoreProjectRequest $request)
     {
         $project = new Project([
-            'manager_id' => Auth::user()->id,
+            'user_id' => Auth::user()->id,
             'status_id' => $request->status_id,
             'title' => $request->title,
             'deadline' => $request->deadline,

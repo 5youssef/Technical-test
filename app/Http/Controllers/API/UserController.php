@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
+
+    public function index()
+    {
+        $tasks = User::all()->toArray();
+        
+        return array_reverse($tasks);
+    }
     /**
      * Register
      */

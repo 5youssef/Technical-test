@@ -14,4 +14,14 @@ class Status extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function task()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function project()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

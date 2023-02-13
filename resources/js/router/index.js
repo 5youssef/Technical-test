@@ -7,12 +7,13 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 
 import Projects from '../components/Projects/Projects';
-import AddProject from '../components/Projects/AddProject';
-import EditProject from '../components/Projects/EditProject';
 
 import Statuses from '../components/Statuses/Statuses';
-import AddStatus from '../components/Statuses/AddStatus';
-import EditStatus from '../components/Statuses/EditStatus';
+
+import Tasks from '../components/Tasks/Tasks';
+
+import TasksList from '../components/Tasks/TasksList.vue'
+
 
 
 export const routes = [
@@ -20,6 +21,11 @@ export const routes = [
         name: 'home',
         path: '/',
         component: Home
+    },
+    {
+        name: 'TasksList',
+        path: '/tasklist',
+        component: TasksList
     },
     {
         name: 'about',
@@ -47,30 +53,17 @@ export const routes = [
         path: '/projects',
         component: Projects
     },
-    {
-        name: 'addproject',
-        path: '/projects/add',
-        component: AddProject
-    },
-    {
-        name: 'editproject',
-        path: '/projects/edit/:id',
-        component: EditProject
-    },
+    
     {
         name: 'statuses',
         path: '/statuses',
         component: Statuses
     },
+
     {
-        name: 'addstatus',
-        path: '/statuses/add',
-        component: AddStatus
-    },
-    {
-        name: 'editstatus',
-        path: '/statuses/edit/:id',
-        component: EditStatus
+        name: 'tasks',
+        path: '/tasks',
+        component: Tasks
     },
 ];
 

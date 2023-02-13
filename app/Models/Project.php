@@ -13,8 +13,7 @@ class Project extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'client_id',
-        'manager_id',
+        'user_id',
         'status_id',
         'title',
         'deadline',
@@ -22,9 +21,9 @@ class Project extends Model
     ];
 
 
-    public function manager()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'manager_id');
+        return $this->belongsTo(User::class);
     }
 
     public function status()
@@ -32,7 +31,7 @@ class Project extends Model
         return $this->belongsTo(Status::class);
     }
 
-    public function tasks()
+    public function task()
     {
         return $this->hasMany(Task::class);
     }

@@ -11,6 +11,8 @@
                     <router-link to="/dashboard" class="nav-item nav-link">Dashboard</router-link>
                     <router-link to="/statuses" class="nav-item nav-link">Statuses</router-link>
                     <router-link to="/projects" class="nav-item nav-link">Projects</router-link>
+                    <router-link to="/tasks" class="nav-item nav-link">Tasks</router-link>
+                    <router-link to="/tasklist" class="nav-item nav-link">Tasks List</router-link>
                     <a class="nav-item nav-link" style="cursor: pointer;" @click="logout">Logout</a>
                 </div>
                 <!-- for non-logged user-->

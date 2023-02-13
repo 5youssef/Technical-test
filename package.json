@@ -16,9 +16,14 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
+        "laravel-vue-pagination": "^4.0.0",
+        "moment": "^2.29.4",
         "vue": "^3.2.31",
         "vue-loader": "^17.0.0",
+        "vue-moment": "^4.1.0",
         "vue-router": "^4.0.13",
+        "vue3-draggable": "^2.0.9",
+        "vuedraggable": "^4.1.0",
         "vuex": "^4.0.2"
     }
 }

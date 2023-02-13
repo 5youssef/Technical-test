@@ -15,28 +15,25 @@ class Task extends Model
         'project_id',
         'user_id',
         'status_id',
-        'title',
+        'title',  
         'deadline',
         'description',
     ];
 
     public function project()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Project::class, 'project_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function status()
     {
-        return $this->belongsTo(Status::class);
+        return $this->belongsTo(Status::class, 'status_id');
     }
 
-    public function getDeadlineAttribute($deadline)
-    {
-        return Carbon::parse($deadline);
-    }
+
 }

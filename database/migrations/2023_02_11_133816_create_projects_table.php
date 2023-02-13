@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('manager_id')->nullable();
-            $table->foreign('manager_id')->references('id')->on('users')->nullOnDelete();
-            $table->foreignId('status_id')->nullable()->constrained()->nullOnDelete();
             $table->string('title');
             $table->date('deadline');
             $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
-        });
+
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('status_id')->nullable()->constrained()->nullOnDelete(); 
+        });  
     }
 
     /**
