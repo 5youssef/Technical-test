@@ -13,7 +13,7 @@ Route::post('logout', [UserController::class, 'logout'])->middleware('auth:sanct
 
 
 
-Route::group(['prefix' => 'projects'], function () {
+Route::group(['prefix' => 'projects', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [ProjectController::class, 'index']);
     Route::post('add', [ProjectController::class, 'add']);
     Route::get('edit/{id}', [ProjectController::class, 'edit']);
@@ -32,7 +32,7 @@ Route::group(['prefix' => 'statuses', 'middleware' => 'auth:sanctum'], function 
 });
 
 
-Route::group(['prefix' => 'tasks',], function () {
+Route::group(['prefix' => 'tasks', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [TaskController::class, 'index']);
     Route::get('/tasks_title', [TaskController::class, 'tasks_title']);
     Route::post('add', [TaskController::class, 'add']);
@@ -44,5 +44,5 @@ Route::group(['prefix' => 'tasks',], function () {
 Route::group(['prefix' => 'users', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [UserController::class, 'index']);
 });
-Route::post('demos/tasks/{id}', [TaskController::class, 'updateTasksStatus']);
+Route::post('demos/tasks/{id}', [TaskController::class, 'updateTasksStatus'])->middleware('auth:sanctum');
 
